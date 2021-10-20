@@ -4,13 +4,15 @@ const post= require('../models/info');
 //# create a post
 exports.create =  (req, res) => {
 
-   console.log('ROUTE SUCCEED')
+  
    const postcreated=new post({
     text:req.body.text,
     name:req.body.name,
-    auteur:req.body.auteur
+    auteur:req.body.auteur,
+    article:req.body.article
   
 });
+console.log('ROUTE SUCCEED',postcreated)
 postcreated.save((error, post)=>{
    if (error) {
      
@@ -23,7 +25,7 @@ postcreated.save((error, post)=>{
        const {text,name,auteur} = post;
        return res.status(201).json({
          
-        postcreated: {text,name,auteur},
+        post: {text,name,auteur},
        });
      } 
 })

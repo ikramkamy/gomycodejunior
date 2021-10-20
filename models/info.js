@@ -9,6 +9,9 @@ type:String,
   text: { type: String, required: true },
  auteur:{
      type:String,
+ },
+ article:{
+     type:String
  }
  
 });
